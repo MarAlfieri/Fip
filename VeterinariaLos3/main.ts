@@ -4,6 +4,7 @@ import { RedVeterinarias } from './redveterinarias';
 // Crear una instancia de la red de veterinarias
 const red = new RedVeterinarias();
 
+//Opciones del menú principal
 function mostrarMenuPrincipal() {
     console.log("Red de Veterinarias Los 3")
     console.log("\n--- MENÚ PRINCIPAL ---");
@@ -14,6 +15,7 @@ function mostrarMenuPrincipal() {
     console.log("5. Salir");
 }
 
+//Menú secundario común a todas las entidades para alta, baja y modificación
 function mostrarMenuAMBL(entidad: string) {
     console.log("Red de Veterinarias Los 3")
     console.log(`\n--- MENÚ ${entidad} ---`);
@@ -24,6 +26,7 @@ function mostrarMenuAMBL(entidad: string) {
     console.log("5. Volver al menú principal");
 }
 
+//Alta, modificación, baja y listado de Veterinarias
 function gestionarVeterinarias() {
     mostrarMenuAMBL("VETERINARIAS");
     let continuar = true;
@@ -61,6 +64,7 @@ function gestionarVeterinarias() {
     }
 }
 
+//Alta, modificación, baja y listado de Proveedores
 function gestionarProveedores() {
     mostrarMenuAMBL("PROVEEDORES");
     let continuar: boolean = true;
@@ -96,7 +100,7 @@ function gestionarProveedores() {
         }
     }
 }
-
+//Alta, modificación, baja y listado de Clientes
 function gestionarClientes() {
     mostrarMenuAMBL("CLIENTES");
     let continuar: boolean = true;
@@ -138,6 +142,7 @@ function gestionarClientes() {
     }
 }
 
+//Alta, modificación, baja y listado de Pacientes
 function gestionarPacientes() {
     mostrarMenuAMBL("PACIENTES");
     let continuar: boolean = true;
@@ -179,6 +184,7 @@ function gestionarPacientes() {
     }
 }
 
+//Despliegue del Menú principal
 function main() {
     let continuar = true;
     while (continuar) {
