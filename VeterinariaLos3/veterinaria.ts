@@ -58,7 +58,6 @@ export class Veterinaria extends Entidad {
         this.pacientes.delete(id);
     }
 
-    
     public imprimirPacientes(): void {
         console.log("Pacientes:");
         this.pacientes.forEach(paciente => {

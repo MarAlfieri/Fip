@@ -6,7 +6,7 @@ export class RedVeterinarias {
     private veterinarias: Map<number, Veterinaria> = new Map();
     private proveedores: Map<number, Proveedor> = new Map();
 
-    //metodos propios de la la red de Veterinarias
+    //Metodos propios de la la red de Veterinarias
     public altaVeterinaria(nombre: string, direccion: string): void {
         const vet = new Veterinaria(nombre, direccion, this.idsExistentes);
         this.veterinarias.set(vet.getId(), vet);
@@ -56,7 +56,7 @@ export class RedVeterinarias {
         });
     }
 
-    //metodos propios de cada Veterinaria
+    //Metodos propios de cada Veterinaria
     
     public altaClienteVeterinaria(idVeterinaria: number, nombre: string, telefono: string, visitas: number) :void {
         this.veterinarias.get(idVeterinaria)?.altaCliente(nombre, telefono , visitas, this.idsExistentes)

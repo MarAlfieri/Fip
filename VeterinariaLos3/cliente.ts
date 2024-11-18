@@ -22,12 +22,12 @@ export class Cliente extends Entidad {
     }
 
     public setTelefono(telefono : string){
-        if (!telefono == null) {
+        if (telefono !== null) {
             this.telefono = telefono;
         }
     }
     public setVisita(visitas : number){
-        if (!visitas == null) {
+        if (visitas !== null) {
             this.visitas = visitas;
         }
     }
