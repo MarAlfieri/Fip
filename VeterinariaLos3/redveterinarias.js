@@ -9,7 +9,7 @@ var RedVeterinarias = /** @class */ (function () {
         this.veterinarias = new Map();
         this.proveedores = new Map();
     }
-    //metodos propios de la la red de Veterinarias
+    //Metodos propios de la la red de Veterinarias
     RedVeterinarias.prototype.altaVeterinaria = function (nombre, direccion) {
         var vet = new veterinaria_1.Veterinaria(nombre, direccion, this.idsExistentes);
         this.veterinarias.set(vet.getId(), vet);
@@ -56,7 +56,7 @@ var RedVeterinarias = /** @class */ (function () {
             console.log("ID: ".concat(proveedor.getId(), ", Nombre: ").concat(proveedor.getNombre(), ", Tel\u00E9fono: ").concat(proveedor.getTelefono()));
         });
     };
-    //metodos propios de cada Veterinaria
+    //Metodos propios de cada Veterinaria
     RedVeterinarias.prototype.altaClienteVeterinaria = function (idVeterinaria, nombre, telefono, visitas) {
         var _a;
         (_a = this.veterinarias.get(idVeterinaria)) === null || _a === void 0 ? void 0 : _a.altaCliente(nombre, telefono, visitas, this.idsExistentes);
