@@ -36,12 +36,12 @@ var Cliente = /** @class */ (function (_super) {
         return this.esVIP;
     };
     Cliente.prototype.setTelefono = function (telefono) {
-        if (!telefono == null) {
+        if (telefono !== null) {
             this.telefono = telefono;
         }
     };
     Cliente.prototype.setVisita = function (visitas) {
-        if (!visitas == null) {
+        if (visitas !== null) {
             this.visitas = visitas;
         }
     };

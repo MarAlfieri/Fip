@@ -4,6 +4,7 @@ var readlineSync = require("readline-sync");
 var redveterinarias_1 = require("./redveterinarias");
 // Crear una instancia de la red de veterinarias
 var red = new redveterinarias_1.RedVeterinarias();
+//Opciones del menú principal
 function mostrarMenuPrincipal() {
     console.log("Red de Veterinarias Los 3");
     console.log("\n--- MENÚ PRINCIPAL ---");
@@ -13,6 +14,7 @@ function mostrarMenuPrincipal() {
     console.log("4. Pacientes");
     console.log("5. Salir");
 }
+//Menú secundario común a todas las entidades para alta, baja y modificación
 function mostrarMenuAMBL(entidad) {
     console.log("Red de Veterinarias Los 3");
     console.log("\n--- MEN\u00DA ".concat(entidad, " ---"));
@@ -22,10 +24,11 @@ function mostrarMenuAMBL(entidad) {
     console.log("4. Listado");
     console.log("5. Volver al menú principal");
 }
+//Alta, modificación, baja y listado de Veterinarias
 function gestionarVeterinarias() {
-    mostrarMenuAMBL("VETERINARIAS");
     var continuar = true;
     while (continuar) {
+        mostrarMenuAMBL("VETERINARIAS");
         var opcion = readlineSync.questionInt("Seleccione una opción: ");
         switch (opcion) {
             case 1:
@@ -58,10 +61,11 @@ function gestionarVeterinarias() {
         }
     }
 }
+//Alta, modificación, baja y listado de Proveedores
 function gestionarProveedores() {
-    mostrarMenuAMBL("PROVEEDORES");
     var continuar = true;
     while (continuar) {
+        mostrarMenuAMBL("PROVEEDORES");
         var opcion = readlineSync.questionInt("Seleccione una opción: ");
         switch (opcion) {
             case 1:
@@ -93,10 +97,11 @@ function gestionarProveedores() {
         }
     }
 }
+//Alta, modificación, baja y listado de Clientes
 function gestionarClientes() {
-    mostrarMenuAMBL("CLIENTES");
     var continuar = true;
     while (continuar) {
+        mostrarMenuAMBL("CLIENTES");
         var opcion = readlineSync.questionInt("Seleccione una opción: ");
         var idVeterinaria = 0;
         if (opcion > 0 && opcion < 5) {
@@ -133,10 +138,11 @@ function gestionarClientes() {
         }
     }
 }
+//Alta, modificación, baja y listado de Pacientes
 function gestionarPacientes() {
-    mostrarMenuAMBL("PACIENTES");
     var continuar = true;
     while (continuar) {
+        mostrarMenuAMBL("PACIENTES");
         var opcion = readlineSync.questionInt("Seleccione una opción: ");
         var idVeterinaria = 0;
         if (opcion > 0 && opcion < 5) {
@@ -173,6 +179,7 @@ function gestionarPacientes() {
         }
     }
 }
+//Despliegue del Menú principal
 function main() {
     var continuar = true;
     while (continuar) {

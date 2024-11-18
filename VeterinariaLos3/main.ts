@@ -28,9 +28,9 @@ function mostrarMenuAMBL(entidad: string) {
 
 //Alta, modificación, baja y listado de Veterinarias
 function gestionarVeterinarias() {
-    mostrarMenuAMBL("VETERINARIAS");
     let continuar = true;
     while (continuar) {
+        mostrarMenuAMBL("VETERINARIAS");
         const opcion = readlineSync.questionInt("Seleccione una opción: ");
         switch (opcion) {
             case 1:
@@ -66,9 +66,9 @@ function gestionarVeterinarias() {
 
 //Alta, modificación, baja y listado de Proveedores
 function gestionarProveedores() {
-    mostrarMenuAMBL("PROVEEDORES");
     let continuar: boolean = true;
     while (continuar) {
+        mostrarMenuAMBL("PROVEEDORES");
         const opcion = readlineSync.questionInt("Seleccione una opción: ");
         switch (opcion) {
             case 1:
@@ -102,9 +102,9 @@ function gestionarProveedores() {
 }
 //Alta, modificación, baja y listado de Clientes
 function gestionarClientes() {
-    mostrarMenuAMBL("CLIENTES");
     let continuar: boolean = true;
     while (continuar) {
+        mostrarMenuAMBL("CLIENTES");
         const opcion = readlineSync.questionInt("Seleccione una opción: ");
         let idVeterinaria: number = 0;
         if (opcion > 0 && opcion < 5){
@@ -144,9 +144,9 @@ function gestionarClientes() {
 
 //Alta, modificación, baja y listado de Pacientes
 function gestionarPacientes() {
-    mostrarMenuAMBL("PACIENTES");
     let continuar: boolean = true;
     while (continuar) {
+        mostrarMenuAMBL("PACIENTES");
         const opcion = readlineSync.questionInt("Seleccione una opción: ");
         let idVeterinaria: number = 0;
         if (opcion > 0 && opcion < 5){
