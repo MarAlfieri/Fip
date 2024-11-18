@@ -8,21 +8,21 @@ var red = new redveterinarias_1.RedVeterinarias();
 function mostrarMenuPrincipal() {
     console.log("Red de Veterinarias Los 3");
     console.log("\n--- MENÚ PRINCIPAL ---");
-    console.log("1. Veterinarias");
-    console.log("2. Proveedores");
-    console.log("3. Clientes");
-    console.log("4. Pacientes");
-    console.log("5. Salir");
+    console.log("1.🏥 Veterinarias");
+    console.log("2.🛒 Proveedores");
+    console.log("3.👫 Clientes");
+    console.log("4.🐕 Pacientes");
+    console.log("5.📤 Salir");
 }
 //Menú secundario común a todas las entidades para alta, baja y modificación
 function mostrarMenuAMBL(entidad) {
     console.log("Red de Veterinarias Los 3");
     console.log("\n--- MEN\u00DA ".concat(entidad, " ---"));
-    console.log("1. Alta");
-    console.log("2. Modificación");
-    console.log("3. Baja");
-    console.log("4. Listado");
-    console.log("5. Volver al menú principal");
+    console.log("1.📥 Alta");
+    console.log("2.📝 Modificación");
+    console.log("3.🗑️  Baja");
+    console.log("4.🖨️  Listado");
+    console.log("5.📤 Volver al menú principal");
 }
 //Alta, modificación, baja y listado de Veterinarias
 function gestionarVeterinarias() {
