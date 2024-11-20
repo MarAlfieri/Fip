@@ -37,18 +37,18 @@ function gestionarVeterinarias() {
     var continuar = true;
     while (continuar) {
         mostrarMenuAMBL("VETERINARIAS");
-        var opcion = readlineSync.questionInt("Seleccione una opción: ");
+        var opcion = readlineSync.questionInt("Seleccione una opcion: ");
         switch (opcion) {
             case 1:
                 var nombreVet = readlineSync.question("Ingrese el nombre de la veterinaria: ");
-                var direccionVet = readlineSync.question("Ingrese dirección Veterinaria: ");
+                var direccionVet = readlineSync.question("Ingrese direccion Veterinaria: ");
                 red.altaVeterinaria(nombreVet, direccionVet);
                 console.log("Veterinaria ".concat(nombreVet, " ingresada correctamente."));
                 break;
             case 2:
                 var idVetModificar = readlineSync.questionInt("Ingrese Id de veterinaria para modificar datos: ");
                 var nuevoNombreVet = readlineSync.question("Ingrese el nuevo nombre de la veterinaria: ");
-                var nuevaDireccionVet = readlineSync.question("Ingrese nueva dirección Veterinaria: ");
+                var nuevaDireccionVet = readlineSync.question("Ingrese nueva direccion Veterinaria: ");
                 red.modificarVeterinaria(idVetModificar, nuevoNombreVet, nuevaDireccionVet);
                 break;
             case 3:
@@ -160,7 +160,7 @@ function gestionarPacientes() {
             case 1:
                 var nombre = readlineSync.question("Ingrese el nombre del paciente: ");
                 var especie = readlineSync.question("Ingrese la especie del paciente: ");
-                var idDuenio = readlineSync.questionInt("Ingrese Id del dueño de la mascota: ");
+                var idDuenio = readlineSync.questionInt("Ingrese Id del dueno de la mascota: ");
                 red.altaPacienteVeterinaria(idVeterinaria, nombre, especie, idDuenio);
                 console.log("Paciente ".concat(nombre, " ingresado correctamente."));
                 break;
