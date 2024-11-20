@@ -10,6 +10,7 @@ export class RedVeterinarias {
     public altaVeterinaria(nombre: string, direccion: string): void {
         const vet = new Veterinaria(nombre, direccion, this.idsExistentes);
         this.veterinarias.set(vet.getId(), vet);
+    }
 
     public modificarVeterinaria(id: number, nombre?: string, direccion?: string): void {
         const vet = this.veterinarias.get(id);

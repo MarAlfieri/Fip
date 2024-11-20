@@ -6,24 +6,32 @@ const red = new RedVeterinarias();
 
 //Opciones del menú principal
 function mostrarMenuPrincipal() {
-    console.log("Red de Veterinarias Los 3")
+    console.log("________________________________");
+    console.log("\n 🏥 Red de Veterinarias Los 3 🐕");
+    console.log("________________________________");
     console.log("\n--- MENÚ PRINCIPAL ---");
+    console.log("________________________________");
     console.log("1.🏥 Veterinarias");
     console.log("2.🛒 Proveedores");
     console.log("3.👫 Clientes");
     console.log("4.🐕 Pacientes");
     console.log("5.📤 Salir");
+    console.log("________________________________");
 }
 
 //Menú secundario común a todas las entidades para alta, baja y modificación
 function mostrarMenuAMBL(entidad: string) {
-    console.log("Red de Veterinarias Los 3")
+    console.log("________________________________");
+    console.log("\n 🏥 Red de Veterinarias Los 3 🐕")
+    console.log("________________________________");
     console.log(`\n--- MENÚ ${entidad} ---`);
+    console.log("________________________________");
     console.log("1.📥 Alta");
     console.log("2.📝 Modificación");
     console.log("3.🗑️  Baja");
     console.log("4.🖨️  Listado");
     console.log("5.📤 Volver al menú principal");
+    console.log("________________________________");
 }
 
 //Alta, modificación, baja y listado de Veterinarias
