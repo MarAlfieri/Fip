@@ -1,6 +1,7 @@
 import * as readlineSync from 'readline-sync';
 import { RedVeterinarias } from './redveterinarias';
 
+
 // Crear una instancia de la red de veterinarias
 const red = new RedVeterinarias();
 
@@ -31,18 +32,18 @@ function gestionarVeterinarias() {
     let continuar = true;
     while (continuar) {
         mostrarMenuAMBL("VETERINARIAS");
-        const opcion = readlineSync.questionInt("Seleccione una opción: ");
+        const opcion = readlineSync.questionInt("Seleccione una opcion: ");
         switch (opcion) {
             case 1:
                 const nombreVet = readlineSync.question("Ingrese el nombre de la veterinaria: ");
-                const direccionVet = readlineSync.question("Ingrese dirección Veterinaria: ");
+                const direccionVet = readlineSync.question("Ingrese direccion Veterinaria: ");
                 red.altaVeterinaria(nombreVet, direccionVet)
                 console.log(`Veterinaria ${nombreVet} ingresada correctamente.`);
                 break;
             case 2:
                 const idVetModificar = readlineSync.questionInt("Ingrese Id de veterinaria para modificar datos: ");
                 const nuevoNombreVet = readlineSync.question("Ingrese el nuevo nombre de la veterinaria: ");
-                const nuevaDireccionVet = readlineSync.question("Ingrese nueva dirección Veterinaria: ");
+                const nuevaDireccionVet = readlineSync.question("Ingrese nueva direccion Veterinaria: ");
                 red.modificarVeterinaria(idVetModificar, nuevoNombreVet, nuevaDireccionVet);
                 break;
             case 3:
@@ -50,7 +51,7 @@ function gestionarVeterinarias() {
                 red.bajaVeterinaria(idVetBorrar);
                 break;
             case 4:
-                console.log("IMPRESIÓN DE VETERINARIAS DE LA RED");
+                console.log("IMPRESION DE VETERINARIAS DE LA RED");
                 red.imprimirVeterinarias();
                 break;
             case 5:
@@ -58,7 +59,7 @@ function gestionarVeterinarias() {
                 console.log("Volviendo al Menú principal..");
                 break;
             default:
-                console.log("Opción inválida.");
+                console.log("Opcion inválida.");
                 break;
         }
     }
@@ -69,7 +70,7 @@ function gestionarProveedores() {
     let continuar: boolean = true;
     while (continuar) {
         mostrarMenuAMBL("PROVEEDORES");
-        const opcion = readlineSync.questionInt("Seleccione una opción: ");
+        const opcion = readlineSync.questionInt("Seleccione una opcion: ");
         switch (opcion) {
             case 1:
                 const nombre = readlineSync.question("Ingrese el nombre del proveedor: ");
@@ -87,7 +88,7 @@ function gestionarProveedores() {
                 red.bajaProveedor(idProveedorBaja);
                 break;
             case 4:
-                console.log("IMPRESIÓN DE PROVEEDORES DE LA RED");
+                console.log("IMPRESION DE PROVEEDORES DE LA RED");
                 red.imprimirProveedores();
                 break;
             case 5:
@@ -95,7 +96,7 @@ function gestionarProveedores() {
                 console.log("Volviendo al Menú principal..");
                 break;
             default:
-                console.log("Opción inválida.");
+                console.log("Opcion inválida.");
                 break;
         }
     }
@@ -105,7 +106,7 @@ function gestionarClientes() {
     let continuar: boolean = true;
     while (continuar) {
         mostrarMenuAMBL("CLIENTES");
-        const opcion = readlineSync.questionInt("Seleccione una opción: ");
+        const opcion = readlineSync.questionInt("Seleccione una opcion: ");
         let idVeterinaria: number = 0;
         if (opcion > 0 && opcion < 5){
             idVeterinaria = readlineSync.questionInt("Ingrese Id de veterinaria para el Cliente: ");
@@ -128,7 +129,7 @@ function gestionarClientes() {
                 red.bajaClienteVeterinaria(idVeterinaria, idClienteBaja);
                 break;
             case 4:
-                console.log("IMPRESIÓN DE CLIENTES POR VETERINARIA SELECCIONADA");
+                console.log("IMPRESION DE CLIENTES POR VETERINARIA SELECCIONADA");
                 red.imprimirClientesVeterinaria(idVeterinaria);
                 break;
             case 5:
@@ -147,7 +148,7 @@ function gestionarPacientes() {
     let continuar: boolean = true;
     while (continuar) {
         mostrarMenuAMBL("PACIENTES");
-        const opcion = readlineSync.questionInt("Seleccione una opción: ");
+        const opcion = readlineSync.questionInt("Seleccione una opcion: ");
         let idVeterinaria: number = 0;
         if (opcion > 0 && opcion < 5){
             idVeterinaria = readlineSync.questionInt("Ingrese Id de veterinaria para el Paciente: ");
@@ -156,7 +157,7 @@ function gestionarPacientes() {
             case 1:
                 const nombre = readlineSync.question("Ingrese el nombre del paciente: ");
                 const especie = readlineSync.question("Ingrese la especie del paciente: ");
-                const idDuenio = readlineSync.questionInt("Ingrese Id del dueño de la mascota: ");
+                const idDuenio = readlineSync.questionInt("Ingrese Id del dueno de la mascota: ");
                 red.altaPacienteVeterinaria(idVeterinaria, nombre, especie, idDuenio);
                 console.log(`Paciente ${nombre} ingresado correctamente.`);
                 break;
@@ -170,7 +171,7 @@ function gestionarPacientes() {
                 red.bajaPacienteVeterinaria(idVeterinaria, idPacienteBaja);
                 break;
             case 4:
-                console.log("IMPRESIÓN DE PACIENTES POR VETERINARIA SELECCIONADA");
+                console.log("IMPRESION DE PACIENTES POR VETERINARIA SELECCIONADA");
                 red.imprimirPacientesVeterinaria(idVeterinaria);
                 break;
             case 5:
@@ -189,7 +190,7 @@ function main() {
     let continuar = true;
     while (continuar) {
         mostrarMenuPrincipal();
-        const opcion = readlineSync.questionInt("Seleccione una opción: ");
+        const opcion = readlineSync.questionInt("Seleccione una opcion: ");
         switch (opcion) {
             case 1:
                 gestionarVeterinarias();
@@ -208,7 +209,7 @@ function main() {
                 console.log("Saliendo del programa...");
                 break;
             default:
-                console.log("Opción inválida. Por favor, seleccione una opción válida.");
+                console.log("Opcion inválida. Por favor, seleccione una opcion válida.");
                 break;
         }
     }

@@ -29,18 +29,18 @@ function gestionarVeterinarias() {
     var continuar = true;
     while (continuar) {
         mostrarMenuAMBL("VETERINARIAS");
-        var opcion = readlineSync.questionInt("Seleccione una opción: ");
+        var opcion = readlineSync.questionInt("Seleccione una opcion: ");
         switch (opcion) {
             case 1:
                 var nombreVet = readlineSync.question("Ingrese el nombre de la veterinaria: ");
-                var direccionVet = readlineSync.question("Ingrese dirección Veterinaria: ");
+                var direccionVet = readlineSync.question("Ingrese direccion Veterinaria: ");
                 red.altaVeterinaria(nombreVet, direccionVet);
                 console.log("Veterinaria ".concat(nombreVet, " ingresada correctamente."));
                 break;
             case 2:
                 var idVetModificar = readlineSync.questionInt("Ingrese Id de veterinaria para modificar datos: ");
                 var nuevoNombreVet = readlineSync.question("Ingrese el nuevo nombre de la veterinaria: ");
-                var nuevaDireccionVet = readlineSync.question("Ingrese nueva dirección Veterinaria: ");
+                var nuevaDireccionVet = readlineSync.question("Ingrese nueva direccion Veterinaria: ");
                 red.modificarVeterinaria(idVetModificar, nuevoNombreVet, nuevaDireccionVet);
                 break;
             case 3:
@@ -48,7 +48,7 @@ function gestionarVeterinarias() {
                 red.bajaVeterinaria(idVetBorrar);
                 break;
             case 4:
-                console.log("IMPRESIÓN DE VETERINARIAS DE LA RED");
+                console.log("IMPRESION DE VETERINARIAS DE LA RED");
                 red.imprimirVeterinarias();
                 break;
             case 5:
@@ -56,7 +56,7 @@ function gestionarVeterinarias() {
                 console.log("Volviendo al Menú principal..");
                 break;
             default:
-                console.log("Opción inválida.");
+                console.log("Opcion inválida.");
                 break;
         }
     }
@@ -66,7 +66,7 @@ function gestionarProveedores() {
     var continuar = true;
     while (continuar) {
         mostrarMenuAMBL("PROVEEDORES");
-        var opcion = readlineSync.questionInt("Seleccione una opción: ");
+        var opcion = readlineSync.questionInt("Seleccione una opcion: ");
         switch (opcion) {
             case 1:
                 var nombre = readlineSync.question("Ingrese el nombre del proveedor: ");
@@ -84,7 +84,7 @@ function gestionarProveedores() {
                 red.bajaProveedor(idProveedorBaja);
                 break;
             case 4:
-                console.log("IMPRESIÓN DE PROVEEDORES DE LA RED");
+                console.log("IMPRESION DE PROVEEDORES DE LA RED");
                 red.imprimirProveedores();
                 break;
             case 5:
@@ -92,7 +92,7 @@ function gestionarProveedores() {
                 console.log("Volviendo al Menú principal..");
                 break;
             default:
-                console.log("Opción inválida.");
+                console.log("Opcion inválida.");
                 break;
         }
     }
@@ -102,7 +102,7 @@ function gestionarClientes() {
     var continuar = true;
     while (continuar) {
         mostrarMenuAMBL("CLIENTES");
-        var opcion = readlineSync.questionInt("Seleccione una opción: ");
+        var opcion = readlineSync.questionInt("Seleccione una opcion: ");
         var idVeterinaria = 0;
         if (opcion > 0 && opcion < 5) {
             idVeterinaria = readlineSync.questionInt("Ingrese Id de veterinaria para el Cliente: ");
@@ -125,7 +125,7 @@ function gestionarClientes() {
                 red.bajaClienteVeterinaria(idVeterinaria, idClienteBaja);
                 break;
             case 4:
-                console.log("IMPRESIÓN DE CLIENTES POR VETERINARIA SELECCIONADA");
+                console.log("IMPRESION DE CLIENTES POR VETERINARIA SELECCIONADA");
                 red.imprimirClientesVeterinaria(idVeterinaria);
                 break;
             case 5:
@@ -143,7 +143,7 @@ function gestionarPacientes() {
     var continuar = true;
     while (continuar) {
         mostrarMenuAMBL("PACIENTES");
-        var opcion = readlineSync.questionInt("Seleccione una opción: ");
+        var opcion = readlineSync.questionInt("Seleccione una opcion: ");
         var idVeterinaria = 0;
         if (opcion > 0 && opcion < 5) {
             idVeterinaria = readlineSync.questionInt("Ingrese Id de veterinaria para el Paciente: ");
@@ -152,7 +152,7 @@ function gestionarPacientes() {
             case 1:
                 var nombre = readlineSync.question("Ingrese el nombre del paciente: ");
                 var especie = readlineSync.question("Ingrese la especie del paciente: ");
-                var idDuenio = readlineSync.questionInt("Ingrese Id del dueño de la mascota: ");
+                var idDuenio = readlineSync.questionInt("Ingrese Id del dueno de la mascota: ");
                 red.altaPacienteVeterinaria(idVeterinaria, nombre, especie, idDuenio);
                 console.log("Paciente ".concat(nombre, " ingresado correctamente."));
                 break;
@@ -166,7 +166,7 @@ function gestionarPacientes() {
                 red.bajaPacienteVeterinaria(idVeterinaria, idPacienteBaja);
                 break;
             case 4:
-                console.log("IMPRESIÓN DE PACIENTES POR VETERINARIA SELECCIONADA");
+                console.log("IMPRESION DE PACIENTES POR VETERINARIA SELECCIONADA");
                 red.imprimirPacientesVeterinaria(idVeterinaria);
                 break;
             case 5:
@@ -184,7 +184,7 @@ function main() {
     var continuar = true;
     while (continuar) {
         mostrarMenuPrincipal();
-        var opcion = readlineSync.questionInt("Seleccione una opción: ");
+        var opcion = readlineSync.questionInt("Seleccione una opcion: ");
         switch (opcion) {
             case 1:
                 gestionarVeterinarias();
@@ -203,7 +203,7 @@ function main() {
                 console.log("Saliendo del programa...");
                 break;
             default:
-                console.log("Opción inválida. Por favor, seleccione una opción válida.");
+                console.log("Opcion inválida. Por favor, seleccione una opcion válida.");
                 break;
         }
     }
