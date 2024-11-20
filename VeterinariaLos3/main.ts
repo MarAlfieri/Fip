@@ -39,18 +39,18 @@ function gestionarVeterinarias() {
     let continuar = true;
     while (continuar) {
         mostrarMenuAMBL("VETERINARIAS");
-        const opcion = readlineSync.questionInt("Seleccione una opción: ");
+        const opcion = readlineSync.questionInt("Seleccione una opcion: ");
         switch (opcion) {
             case 1:
                 const nombreVet = readlineSync.question("Ingrese el nombre de la veterinaria: ");
-                const direccionVet = readlineSync.question("Ingrese dirección Veterinaria: ");
+                const direccionVet = readlineSync.question("Ingrese direccion Veterinaria: ");
                 red.altaVeterinaria(nombreVet, direccionVet)
                 console.log(`Veterinaria ${nombreVet} ingresada correctamente.`);
                 break;
             case 2:
                 const idVetModificar = readlineSync.questionInt("Ingrese Id de veterinaria para modificar datos: ");
                 const nuevoNombreVet = readlineSync.question("Ingrese el nuevo nombre de la veterinaria: ");
-                const nuevaDireccionVet = readlineSync.question("Ingrese nueva dirección Veterinaria: ");
+                const nuevaDireccionVet = readlineSync.question("Ingrese nueva direccion Veterinaria: ");
                 red.modificarVeterinaria(idVetModificar, nuevoNombreVet, nuevaDireccionVet);
                 break;
             case 3:
@@ -164,7 +164,7 @@ function gestionarPacientes() {
             case 1:
                 const nombre = readlineSync.question("Ingrese el nombre del paciente: ");
                 const especie = readlineSync.question("Ingrese la especie del paciente: ");
-                const idDuenio = readlineSync.questionInt("Ingrese Id del dueño de la mascota: ");
+                const idDuenio = readlineSync.questionInt("Ingrese Id del dueno de la mascota: ");
                 red.altaPacienteVeterinaria(idVeterinaria, nombre, especie, idDuenio);
                 console.log(`Paciente ${nombre} ingresado correctamente.`);
                 break;
