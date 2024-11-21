@@ -74,7 +74,7 @@ function gestionarProveedores() {
     var continuar = true;
     while (continuar) {
         mostrarMenuAMBL("PROVEEDORES");
-        var opcion = readlineSync.questionInt("Seleccione una opción: ");
+        var opcion = readlineSync.questionInt("Seleccione una opcion: ");
         switch (opcion) {
             case 1:
                 var nombre = readlineSync.question("Ingrese el nombre del proveedor: ");
@@ -110,7 +110,7 @@ function gestionarClientes() {
     var continuar = true;
     while (continuar) {
         mostrarMenuAMBL("CLIENTES");
-        var opcion = readlineSync.questionInt("Seleccione una opción: ");
+        var opcion = readlineSync.questionInt("Seleccione una opcion: ");
         var idVeterinaria = 0;
         if (opcion > 0 && opcion < 5) {
             idVeterinaria = readlineSync.questionInt("Ingrese Id de veterinaria para el Cliente: ");
@@ -119,7 +119,7 @@ function gestionarClientes() {
             case 1:
                 var nombre = readlineSync.question("Ingrese el nombre del cliente: ");
                 var telefono = readlineSync.question("Ingrese el telefono del cliente: ");
-                var visitas = readlineSync.questionInt("Ingrese el número de visitas del cliente: ");
+                var visitas = readlineSync.questionInt("Ingrese el numero de visitas del cliente: ");
                 red.altaClienteVeterinaria(idVeterinaria, nombre, telefono, visitas);
                 console.log("Cliente ".concat(nombre, " ingresado correctamente."));
                 break;
@@ -151,7 +151,7 @@ function gestionarPacientes() {
     var continuar = true;
     while (continuar) {
         mostrarMenuAMBL("PACIENTES");
-        var opcion = readlineSync.questionInt("Seleccione una opción: ");
+        var opcion = readlineSync.questionInt("Seleccione una opcion: ");
         var idVeterinaria = 0;
         if (opcion > 0 && opcion < 5) {
             idVeterinaria = readlineSync.questionInt("Ingrese Id de veterinaria para el Paciente: ");
@@ -192,7 +192,7 @@ function main() {
     var continuar = true;
     while (continuar) {
         mostrarMenuPrincipal();
-        var opcion = readlineSync.questionInt("Seleccione una opción: ");
+        var opcion = readlineSync.questionInt("Seleccione una opcion: ");
         switch (opcion) {
             case 1:
                 gestionarVeterinarias();
