@@ -77,7 +77,7 @@ function gestionarProveedores() {
     let continuar: boolean = true;
     while (continuar) {
         mostrarMenuAMBL("PROVEEDORES");
-        const opcion = readlineSync.questionInt("Seleccione una opción: ");
+        const opcion = readlineSync.questionInt("Seleccione una opcion: ");
         switch (opcion) {
             case 1:
                 const nombre = readlineSync.question("Ingrese el nombre del proveedor: ");
@@ -113,7 +113,7 @@ function gestionarClientes() {
     let continuar: boolean = true;
     while (continuar) {
         mostrarMenuAMBL("CLIENTES");
-        const opcion = readlineSync.questionInt("Seleccione una opción: ");
+        const opcion = readlineSync.questionInt("Seleccione una opcion: ");
         let idVeterinaria: number = 0;
         if (opcion > 0 && opcion < 5){
             idVeterinaria = readlineSync.questionInt("Ingrese Id de veterinaria para el Cliente: ");
@@ -122,7 +122,7 @@ function gestionarClientes() {
             case 1:
                 const nombre = readlineSync.question("Ingrese el nombre del cliente: ");
                 const telefono = readlineSync.question("Ingrese el telefono del cliente: ");
-                const visitas = readlineSync.questionInt("Ingrese el número de visitas del cliente: ");
+                const visitas = readlineSync.questionInt("Ingrese el numero de visitas del cliente: ");
                 red.altaClienteVeterinaria(idVeterinaria, nombre, telefono, visitas);
                 console.log(`Cliente ${nombre} ingresado correctamente.`);
                 break;
@@ -155,7 +155,7 @@ function gestionarPacientes() {
     let continuar: boolean = true;
     while (continuar) {
         mostrarMenuAMBL("PACIENTES");
-        const opcion = readlineSync.questionInt("Seleccione una opción: ");
+        const opcion = readlineSync.questionInt("Seleccione una opcion: ");
         let idVeterinaria: number = 0;
         if (opcion > 0 && opcion < 5){
             idVeterinaria = readlineSync.questionInt("Ingrese Id de veterinaria para el Paciente: ");
@@ -197,7 +197,7 @@ function main() {
     let continuar = true;
     while (continuar) {
         mostrarMenuPrincipal();
-        const opcion = readlineSync.questionInt("Seleccione una opción: ");
+        const opcion = readlineSync.questionInt("Seleccione una opcion: ");
         switch (opcion) {
             case 1:
                 gestionarVeterinarias();
