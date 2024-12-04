@@ -26,11 +26,19 @@ export class Veterinaria extends Entidad {
             if (nombre) cliente.setNombre(nombre);
             if (telefono) cliente.setTelefono(telefono);
             if (visitas) cliente.setVisita(visitas);
+            console.log("Cliente modificado correctamente...".yellow)
+        } else {
+            console.log("Cliente no encontrado...".red)
         }
     }
 
     public bajaCliente(id: number): void {
-        this.clientes.delete(id);
+        if (this.clientes.get(id) !== undefined) {
+            this.clientes.delete(id);
+            console.log("Cliente elimiando correctamente...".yellow);
+        }else{
+            console.log("Cliente no encontrado...".red);
+        }
     }
     
     public imprimirClientes(): void {
@@ -51,11 +59,19 @@ export class Veterinaria extends Entidad {
             if (nombre) paciente.setNombre(nombre);
             if (especie) paciente.setEspecie(especie === 'perro' || especie === 'gato' ? especie : 'exotica');
             if (idDuenio) paciente.setIdDuenio(idDuenio)
+            console.log("Paciente modificado correctamente...".yellow)
+        } else {
+            console.log("Paciente no encontrado".red)
         }
     }
 
     public bajaPaciente(id: number): void {
-        this.pacientes.delete(id);
+        if (this.pacientes.get(id) !== undefined) {
+            this.pacientes.delete(id);
+            console.log("Paciente elimiando correctamente...".yellow)
+        }else{
+            console.log("Paciente no encontrado...".red)
+        }
     }
 
     public imprimirPacientes(): void {

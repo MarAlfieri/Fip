@@ -17,10 +17,17 @@ export class RedVeterinarias {
         if (vet) {
             if (nombre) vet.setNombre(nombre);
             if (direccion) vet.setDireccion(direccion);
+        } else {
+            console.log("Veterinaria no encontrada".red)
         }
     }
     public bajaVeterinaria(id: number): void {
-        this.veterinarias.delete(id);
+        if (this.veterinarias.get(id) !== undefined) {
+            this.veterinarias.delete(id);
+            console.log("Veterinaria elimianda correctamente...".yellow);
+        }else{
+            console.log("Veterinaria no encontrada...".red);
+        }
     }
     
     public imprimirVeterinarias(): void {
@@ -42,11 +49,19 @@ export class RedVeterinarias {
         if (proveedor) {
             if (nombre) proveedor.setNombre(nombre);
             if (telefono) proveedor.setTelefono(telefono);
+            console.log("Proveedor modificado correctamente...".yellow)
+        } else {
+            console.log("Proveedor no encontrado".red)
         }
     }
     
     public bajaProveedor(id: number): void {
-        this.proveedores.delete(id);
+        if (this.proveedores.get(id) !== undefined) {
+            this.proveedores.delete(id);
+            console.log("Proveedor elimiando correctamente...".yellow);
+        }else{
+            console.log("Proveedor no encontrado...".red);
+        }
     }
 
     public imprimirProveedores(): void {
