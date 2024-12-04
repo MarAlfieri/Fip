@@ -7,7 +7,6 @@ const red = new RedVeterinarias();
 
 //Opciones del menú principal
 function mostrarMenuPrincipal() {
-<<<<<<< HEAD
     console.log("________________________________".green);
     console.log("\n 🏥 Red de Veterinarias Los 3 🐕".yellow);
     console.log("________________________________".green);
@@ -19,24 +18,10 @@ function mostrarMenuPrincipal() {
     console.log("4.🐕 Pacientes".green);
     console.log("5.📤 Salir".green);
     console.log("________________________________".green);
-=======
-    console.log("________________________________");
-    console.log("\n 🏥 Red de Veterinarias Los 3 🐕");
-    console.log("________________________________");
-    console.log("\n--- MENÚ PRINCIPAL ---");
-    console.log("________________________________");
-    console.log("1.🏥 Veterinarias");
-    console.log("2.🛒 Proveedores");
-    console.log("3.👫 Clientes");
-    console.log("4.🐕 Pacientes");
-    console.log("5.📤 Salir");
-    console.log("________________________________");
->>>>>>> 56455c8f86b837a9fba8e7965d082b3a570cea42
 }
 
 //Menú secundario común a todas las entidades para alta, baja y modificación
 function mostrarMenuAMBL(entidad: string) {
-<<<<<<< HEAD
     console.log("________________________________".green);
     console.log("\n 🏥 Red de Veterinarias Los 3 🐕".yellow)
     console.log("________________________________".green);
@@ -48,19 +33,6 @@ function mostrarMenuAMBL(entidad: string) {
     console.log("4.🖨️  Listado".green);
     console.log("5.📤 Volver al menú principal".green);
     console.log("________________________________".green);
-=======
-    console.log("________________________________");
-    console.log("\n 🏥 Red de Veterinarias Los 3 🐕")
-    console.log("________________________________");
-    console.log(`\n--- MENÚ ${entidad} ---`);
-    console.log("________________________________");
-    console.log("1.📥 Alta");
-    console.log("2.📝 Modificación");
-    console.log("3.🗑️  Baja");
-    console.log("4.🖨️  Listado");
-    console.log("5.📤 Volver al menú principal");
-    console.log("________________________________");
->>>>>>> 56455c8f86b837a9fba8e7965d082b3a570cea42
 }
 
 //Alta, modificación, baja y listado de Veterinarias
@@ -68,11 +40,7 @@ function gestionarVeterinarias() {
     let continuar = true;
     while (continuar) {
         mostrarMenuAMBL("VETERINARIAS");
-<<<<<<< HEAD
         const opcion = readlineSync.question("Seleccione una opcion: ".blue);
-=======
-        const opcion = readlineSync.questionInt("Seleccione una opcion: ");
->>>>>>> 56455c8f86b837a9fba8e7965d082b3a570cea42
         switch (opcion) {
             case "1":
                 const nombreVet = readlineSync.question("Ingrese el nombre de la veterinaria: ");
@@ -110,11 +78,9 @@ function gestionarProveedores() {
     let continuar: boolean = true;
     while (continuar) {
         mostrarMenuAMBL("PROVEEDORES");
-<<<<<<< HEAD
+
         const opcion = readlineSync.question("Seleccione una opcion: ".blue);
-=======
-        const opcion = readlineSync.questionInt("Seleccione una opcion: ");
->>>>>>> 56455c8f86b837a9fba8e7965d082b3a570cea42
+
         switch (opcion) {
             case "1":
                 const nombre = readlineSync.question("Ingrese el nombre del proveedor: ");
@@ -150,11 +116,9 @@ function gestionarClientes() {
     let continuar: boolean = true;
     while (continuar) {
         mostrarMenuAMBL("CLIENTES");
-<<<<<<< HEAD
+
         const opcion = readlineSync.question("Seleccione una opcion: ".blue);
-=======
-        const opcion = readlineSync.questionInt("Seleccione una opcion: ");
->>>>>>> 56455c8f86b837a9fba8e7965d082b3a570cea42
+
         let idVeterinaria: number = 0;
         if (parseInt(opcion) > 0 && parseInt(opcion) < 5){
             idVeterinaria = readlineSync.questionInt("Ingrese Id de veterinaria para el Cliente: ");
@@ -196,11 +160,8 @@ function gestionarPacientes() {
     let continuar: boolean = true;
     while (continuar) {
         mostrarMenuAMBL("PACIENTES");
-<<<<<<< HEAD
         const opcion = readlineSync.question("Seleccione una opcion: ".blue);
-=======
-        const opcion = readlineSync.questionInt("Seleccione una opcion: ");
->>>>>>> 56455c8f86b837a9fba8e7965d082b3a570cea42
+
         let idVeterinaria: number = 0;
         if (parseInt(opcion) > 0 && parseInt(opcion) < 5){
             idVeterinaria = readlineSync.questionInt("Ingrese Id de veterinaria para el Paciente: ");
@@ -242,11 +203,7 @@ function main() {
     let continuar = true;
     while (continuar) {
         mostrarMenuPrincipal();
-<<<<<<< HEAD
         const opcion = readlineSync.question("Seleccione una opcion: ".blue);
-=======
-        const opcion = readlineSync.questionInt("Seleccione una opcion: ");
->>>>>>> 56455c8f86b837a9fba8e7965d082b3a570cea42
         switch (opcion) {
             case "1":
                 gestionarVeterinarias();
