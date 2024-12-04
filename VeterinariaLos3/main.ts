@@ -7,6 +7,7 @@ const red = new RedVeterinarias();
 
 //Opciones del menú principal
 function mostrarMenuPrincipal() {
+    console.clear()
     console.log("________________________________".green);
     console.log("\n 🏥 Red de Veterinarias Los 3 🐕".yellow);
     console.log("________________________________".green);
@@ -22,6 +23,7 @@ function mostrarMenuPrincipal() {
 
 //Menú secundario común a todas las entidades para alta, baja y modificación
 function mostrarMenuAMBL(entidad: string) {
+    console.clear()
     console.log("________________________________".green);
     console.log("\n 🏥 Red de Veterinarias Los 3 🐕".yellow)
     console.log("________________________________".green);
@@ -64,12 +66,13 @@ function gestionarVeterinarias() {
                 break;
             case "5":
                 continuar = false;
-                console.log("Volviendo al Menú principal..".yellow);
+                console.log("Volverá al Menú principal..".yellow);
                 break;
             default:
                 console.log("Opción inválida.".red);
                 break;
         }
+        readlineSync.question("Presione una tecla para continuar...".cyan);
     }
 }
 
@@ -91,7 +94,8 @@ function gestionarProveedores() {
             case "2":
                 const idProveedorModificar = readlineSync.questionInt("Ingrese Id de proveedor para modificar datos: ");
                 const nuevoNombreProveedor = readlineSync.question("Ingrese el nuevo nombre del proveedor: ");
-                red.modificarProveedor(idProveedorModificar, nuevoNombreProveedor);
+                const nuevoTelefonoProveedor= readlineSync.question("Ingrese el nuevo telefono del proveedor: ");
+                red.modificarProveedor(idProveedorModificar, nuevoNombreProveedor, nuevoTelefonoProveedor);
                 break;
             case "3":
                 const idProveedorBaja = readlineSync.questionInt("Ingrese Id de proveedor a dar de baja: ");
@@ -103,12 +107,13 @@ function gestionarProveedores() {
                 break;
             case "5":
                 continuar = false;
-                console.log("Volviendo al Menú principal..".yellow);
+                console.log("Volverá al Menú principal..".yellow);
                 break;
             default:
                 console.log("Opción inválida.".red);
                 break;
         }
+        readlineSync.question("Presione una tecla para continuar...".cyan);
     }
 }
 //Alta, modificación, baja y listado de Clientes
@@ -134,7 +139,9 @@ function gestionarClientes() {
             case "2":
                 const idClienteModificar = readlineSync.questionInt("Ingrese Id de cliente a modificar: ");
                 const nuevoNombreCliente = readlineSync.question("Ingrese el nuevo nombre del cliente: ");
-                red.modificarClienteVeterinaria(idVeterinaria, idClienteModificar, nuevoNombreCliente);
+                const nuevoTelefonoCliente = readlineSync.question("Ingrese el nuevo telefono del cliente: ");
+                const nuevaCantVisitas = readlineSync.questionInt("Ingrese la nueva cantidad de visitas del cliente: ");
+                red.modificarClienteVeterinaria(idVeterinaria, idClienteModificar, nuevoNombreCliente, nuevoTelefonoCliente, nuevaCantVisitas);
                 break;
             case "3":
                 const idClienteBaja = readlineSync.questionInt("Ingrese Id del cliente a dar de baja: ");
@@ -146,12 +153,13 @@ function gestionarClientes() {
                 break;
             case "5":
                 continuar = false;
-                console.log("Volviendo al Menú principal..".yellow);
+                console.log("Volverá al Menú principal..".yellow);
                 break;
             default:
                 console.log("Opción inválida.".red);
                 break;
         }
+        readlineSync.question("Presione una tecla para continuar...".cyan);
     }
 }
 
@@ -189,12 +197,13 @@ function gestionarPacientes() {
                 break;
             case "5":
                 continuar = false;
-                console.log("Volviendo al Menú principal..".yellow);
+                console.log("Volverá al Menú principal..".yellow);
                 break;
             default:
                 console.log("Opción inválida.".red);
                 break;
         }
+        readlineSync.question("Presione una tecla para continuar...".cyan);
     }
 }
 
@@ -222,7 +231,7 @@ function main() {
                 console.log("Saliendo del programa...".yellow);
                 break;
             default:
-                console.log("Opción inválida. Por favor, seleccione una opción válida.".red);
+                readlineSync.question("Opcion invalida. Presione una tecla para continuar...".red);
                 break;
         }
     }
