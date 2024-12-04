@@ -17,6 +17,7 @@ export class RedVeterinarias {
         if (vet) {
             if (nombre) vet.setNombre(nombre);
             if (direccion) vet.setDireccion(direccion);
+            console.log("Veterinaria modificada correctamente".yellow)
         } else {
             console.log("Veterinaria no encontrada".red)
         }
