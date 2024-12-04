@@ -1,5 +1,6 @@
 import { Veterinaria } from "./veterinaria";
 import { Proveedor } from "./proveedor";
+import "colors";
 
 export class RedVeterinarias {
     private idsExistentes: Set<number> = new Set();
